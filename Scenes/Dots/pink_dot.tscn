@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=3 uid="uid://dsm0gacksipi0"]
+
+[ext_resource type="PackedScene" uid="uid://d0bsiknlebs18" path="res://Scenes/Dot.tscn" id="2"]
+[ext_resource type="Texture2D" uid="uid://b5de6bcdjjas4" path="res://Assets/Emoji/Red Heart.png" id="2_gqv2e"]
+
+[node name="pink_dot" instance=ExtResource("2")]
+color = "pink"
+
+[node name="Sprite2D" parent="." index="0"]
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("2_gqv2e")

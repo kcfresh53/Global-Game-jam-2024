@@ -1,0 +1,47 @@
+; Engine configuration file.
+; It's best edited using the editor UI and not directly,
+; since the parameters that go here are not all obvious.
+;
+; Format:
+;   [section] ; section goes between []
+;   param=value ; assign values to parameters
+
+config_version=5
+
+[application]
+
+config/name="Global Game jam"
+run/main_scene="res://Scenes/SplashScreen.tscn"
+config/features=PackedStringArray("4.2", "Forward Plus")
+boot_splash/show_image=false
+config/icon="res://Assets/Emoji/Smiling Face with Sunglasses.png"
+
+[autoload]
+
+gd="*res://addons/godot-action/utils_gd_action.tscn"
+sp="*res://addons/awesome_splash/utils_splash.gd"
+
+[display]
+
+window/size/viewport_width=540
+window/size/viewport_height=960
+window/size/resizable=false
+window/stretch/mode="viewport"
+window/stretch/aspect="keep_width"
+
+[editor_plugins]
+
+enabled=PackedStringArray("res://addons/awesome_splash/plugin.cfg", "res://addons/godot-action/plugin.cfg", "res://addons/random_audio/plugin.cfg")
+
+[input]
+
+ui_touch={
+"deadzone": 0.5,
+"events": [Object(InputEventMouseButton,"resource_local_to_scene":false,"resource_name":"","device":-1,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"button_mask":1,"position":Vector2(425, 8),"global_position":Vector2(429, 49),"factor":1.0,"button_index":1,"canceled":false,"pressed":true,"double_click":false,"script":null)
+]
+}
+pause={
+"deadzone": 0.5,
+"events": [Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":-1,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"pressed":false,"keycode":0,"physical_keycode":4194305,"key_label":0,"unicode":0,"echo":false,"script":null)
+]
+}

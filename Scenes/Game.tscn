@@ -1,0 +1,263 @@
+[gd_scene load_steps=30 format=3 uid="uid://ynpouyser6kn"]
+
+[ext_resource type="Script" path="res://Scripts/Game.gd" id="1_jlnwy"]
+[ext_resource type="PackedScene" uid="uid://bctvf2fglcwad" path="res://Scenes/grid.tscn" id="1_scbia"]
+[ext_resource type="Texture2D" uid="uid://cm5cr862bja8k" path="res://Assets/UI/bg.png" id="2_rj2la"]
+[ext_resource type="Shader" path="res://Scripts/shaders/transition.gdshader" id="4_7bhtw"]
+[ext_resource type="FontFile" uid="uid://78gj0lcehkd0" path="res://Assets/Fonts/BradBunR.ttf" id="4_glxlf"]
+[ext_resource type="Texture2D" uid="uid://bh74o11u6l87h" path="res://Assets/UI/progress_bg.png" id="5_op8r2"]
+[ext_resource type="Texture2D" uid="uid://b7bica08ywrh0" path="res://Assets/UI/progress.png" id="6_nbcr5"]
+[ext_resource type="PackedScene" uid="uid://ulkagbpb50nh" path="res://Scenes/pause_menu.tscn" id="7_kq70d"]
+[ext_resource type="Texture2D" uid="uid://ca484b6nsjvwr" path="res://Assets/Emoji/Rolling on the Floor Laughing.png" id="8_3sn1s"]
+[ext_resource type="AudioStream" uid="uid://cuiifb51jrquy" path="res://Assets/Music/Sakura-Girl-Peach-chosic.com_.mp3" id="9_x2in3"]
+[ext_resource type="AudioStream" uid="uid://ctrmqe45inlwj" path="res://Assets/Sound/kids-cheering-sound-effect.mp3" id="10_68by2"]
+[ext_resource type="Script" path="res://addons/random_audio/AudioStreamPlayerRandom2D.gd" id="11_3ixc2"]
+[ext_resource type="Script" path="res://addons/random_audio/AudioStreamArray.gd" id="12_li5py"]
+[ext_resource type="AudioStream" uid="uid://brm5b6aqxffke" path="res://Assets/jokelines/joke1.wav" id="13_pbfh8"]
+[ext_resource type="AudioStream" uid="uid://bonmno6noru16" path="res://Assets/jokelines/joke2.wav" id="14_inxwt"]
+[ext_resource type="AudioStream" uid="uid://dlxy1c1s1wyjk" path="res://Assets/jokelines/joke3.wav" id="15_llcq6"]
+[ext_resource type="AudioStream" uid="uid://dv5jlm8acauqp" path="res://Assets/jokelines/joke4.wav" id="16_h5lso"]
+[ext_resource type="AudioStream" uid="uid://bfdkk1aahhw8p" path="res://Assets/jokelines/joke5.wav" id="17_mkwur"]
+[ext_resource type="AudioStream" uid="uid://djerbx2nij2ej" path="res://Assets/jokelines/joke6.wav" id="18_34e4p"]
+[ext_resource type="AudioStream" uid="uid://ogaekurjk206" path="res://Assets/jokelines/joke7.wav" id="19_avn78"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_sjgcg"]
+content_margin_left = 20.0
+content_margin_top = 10.0
+content_margin_right = 20.0
+content_margin_bottom = 30.0
+bg_color = Color(0.996078, 0.329412, 0.741176, 1)
+border_width_left = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(0.6, 0.376471, 0.203922, 1)
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+
+[sub_resource type="LabelSettings" id="LabelSettings_v27jp"]
+font = ExtResource("4_glxlf")
+font_size = 32
+shadow_color = Color(0, 0, 0, 0.372549)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_k5g6t"]
+shader = ExtResource("4_7bhtw")
+shader_parameter/progress = 1.0
+shader_parameter/bg_color = Color(0, 0, 0, 0)
+shader_parameter/wave_1_color = Color(1, 1, 1, 1)
+shader_parameter/wave_2_color = Color(0.998773, 0.404395, 0.607851, 1)
+shader_parameter/wave_1_speed = -1.0
+shader_parameter/wave_2_speed = 1.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_pnvgq"]
+bg_color = Color(0.972549, 0.521569, 0.611765, 1)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(1, 1, 1, 1)
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+
+[sub_resource type="Animation" id="Animation_gp88o"]
+resource_name = "poptime"
+length = 0.5
+loop_mode = 2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CanvasLayer/Poptime_btn:size")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(2.2974, 0.535886),
+"update": 0,
+"values": [Vector2(200, 100), Vector2(220, 120)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("CanvasLayer/Poptime_btn:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(2.2974, 0.466517),
+"update": 0,
+"values": [Vector2(170, 820), Vector2(160, 816)]
+}
+
+[sub_resource type="Animation" id="Animation_xa17s"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CanvasLayer/Poptime_btn:size")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(200, 100)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("CanvasLayer/Poptime_btn:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(170, 820)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_1ak06"]
+_data = {
+"RESET": SubResource("Animation_xa17s"),
+"poptime": SubResource("Animation_gp88o")
+}
+
+[sub_resource type="Gradient" id="Gradient_qlfrk"]
+offsets = PackedFloat32Array(0.286667, 1)
+colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 0)
+
+[sub_resource type="Resource" id="Resource_uqruv"]
+script = ExtResource("12_li5py")
+streams = Array[AudioStream]([ExtResource("13_pbfh8"), ExtResource("14_inxwt"), ExtResource("15_llcq6"), ExtResource("16_h5lso"), ExtResource("17_mkwur"), ExtResource("18_34e4p"), ExtResource("19_avn78")])
+
+[node name="Game" type="Node"]
+script = ExtResource("1_jlnwy")
+
+[node name="BG" type="TextureRect" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_rj2la")
+
+[node name="Grid" parent="." instance=ExtResource("1_scbia")]
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="ScoreContainer" type="PanelContainer" parent="CanvasLayer"]
+anchors_preset = 10
+anchor_right = 1.0
+grow_horizontal = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_sjgcg")
+
+[node name="Container" type="VBoxContainer" parent="CanvasLayer/ScoreContainer"]
+layout_mode = 2
+
+[node name="score_lbl" type="Label" parent="CanvasLayer/ScoreContainer/Container"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Score: "
+label_settings = SubResource("LabelSettings_v27jp")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer/ScoreContainer/Container"]
+layout_mode = 2
+
+[node name="laughMeter_lbl" type="Label" parent="CanvasLayer/ScoreContainer/Container/HBoxContainer"]
+layout_mode = 2
+text = "Laugh Meter: "
+label_settings = SubResource("LabelSettings_v27jp")
+
+[node name="TextureProgressBar" type="TextureProgressBar" parent="CanvasLayer/ScoreContainer/Container/HBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+texture_under = ExtResource("5_op8r2")
+texture_progress = ExtResource("6_nbcr5")
+texture_progress_offset = Vector2(0, -2)
+
+[node name="pause_menu" parent="CanvasLayer" instance=ExtResource("7_kq70d")]
+visible = false
+
+[node name="transition" type="ColorRect" parent="CanvasLayer"]
+visible = false
+material = SubResource("ShaderMaterial_k5g6t")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+metadata/_edit_lock_ = true
+
+[node name="fade" type="ColorRect" parent="CanvasLayer"]
+visible = false
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="Poptime_btn" type="Button" parent="CanvasLayer"]
+visible = false
+custom_minimum_size = Vector2(200, 100)
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -100.0
+offset_top = -140.0
+offset_right = 100.0
+offset_bottom = -40.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("4_glxlf")
+theme_override_font_sizes/font_size = 32
+theme_override_styles/normal = SubResource("StyleBoxFlat_pnvgq")
+theme_override_styles/hover = SubResource("StyleBoxFlat_pnvgq")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_pnvgq")
+text = "Pop Time!"
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_1ak06")
+}
+
+[node name="LaughParticles" type="CPUParticles2D" parent="."]
+position = Vector2(269, 431)
+emitting = false
+amount = 20
+one_shot = true
+explosiveness = 0.22
+randomness = 0.53
+lifetime_randomness = 0.16
+texture = ExtResource("8_3sn1s")
+direction = Vector2(0, -50)
+spread = 74.09
+initial_velocity_min = 74.75
+initial_velocity_max = 424.25
+angular_velocity_min = -552.73
+angular_velocity_max = 203.64
+linear_accel_max = 40.0
+scale_amount_min = 0.2
+scale_amount_max = 0.5
+color_ramp = SubResource("Gradient_qlfrk")
+
+[node name="BackgroundMusic" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("9_x2in3")
+
+[node name="fx" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("10_68by2")
+
+[node name="jokePlayer" type="AudioStreamPlayer2D" parent="."]
+script = ExtResource("11_3ixc2")
+volume = 20.0
+use_stream_array = true
+stream_array = SubResource("Resource_uqruv")
+
+[connection signal="pop_time" from="Grid" to="." method="_on_grid_pop_time"]
+[connection signal="progress_bar_update" from="Grid" to="." method="_on_grid_progress_bar_update"]
+[connection signal="score_updated" from="Grid" to="." method="_on_grid_score_updated"]
+[connection signal="pressed" from="CanvasLayer/Poptime_btn" to="." method="_on_poptime_btn_pressed"]
+[connection signal="finished" from="BackgroundMusic" to="." method="_on_background_music_finished"]

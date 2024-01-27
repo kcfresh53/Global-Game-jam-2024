@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=3 uid="uid://dg8faho6jm1ry"]
+
+[ext_resource type="PackedScene" uid="uid://d0bsiknlebs18" path="res://Scenes/Dot.tscn" id="2"]
+[ext_resource type="Texture2D" uid="uid://ca484b6nsjvwr" path="res://Assets/Emoji/Rolling on the Floor Laughing.png" id="2_s1n6t"]
+
+[node name="blue_dot" instance=ExtResource("2")]
+color = "blue"
+
+[node name="Sprite2D" parent="." index="0"]
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("2_s1n6t")

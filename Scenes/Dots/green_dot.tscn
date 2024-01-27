@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=3 uid="uid://ynydqqnplwkt"]
+
+[ext_resource type="PackedScene" uid="uid://d0bsiknlebs18" path="res://Scenes/Dot.tscn" id="2"]
+[ext_resource type="Texture2D" uid="uid://v07pwr5dau1t" path="res://Assets/Emoji/Grinning Squinting Face.png" id="2_83iac"]
+
+[node name="green_dot" instance=ExtResource("2")]
+color = "green"
+
+[node name="Sprite2D" parent="." index="0"]
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("2_83iac")

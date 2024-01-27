@@ -1,0 +1,16 @@
+[gd_scene load_steps=5 format=3 uid="uid://cys6xl6fe23kp"]
+
+[ext_resource type="Script" path="res://addons/awesome_splash/core/SplashContainer.gd" id="1_j3ecv"]
+[ext_resource type="PackedScene" uid="uid://deek6xkn5e5p2" path="res://src/demo_collection/aqua/splash_screen.tscn" id="2_cv6wb"]
+[ext_resource type="PackedScene" uid="uid://dua5bmnthjes2" path="res://Scenes/main_menu.tscn" id="2_l7d8q"]
+[ext_resource type="AudioStream" uid="uid://gny87hq1sl1f" path="res://Assets/Sound/mixkit-cartoon-bubbles-popping-732.wav" id="4_7gxmw"]
+
+[node name="SplashContainer" type="Node2D"]
+script = ExtResource("1_j3ecv")
+move_to_scene = ExtResource("2_l7d8q")
+
+[node name="SplashAqua" parent="." instance=ExtResource("2_cv6wb")]
+
+[node name="fx" type="AudioStreamPlayer" parent="SplashAqua"]
+stream = ExtResource("4_7gxmw")
+autoplay = true

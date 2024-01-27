@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=3 uid="uid://bqwq6fddt48u"]
+
+[ext_resource type="PackedScene" uid="uid://d0bsiknlebs18" path="res://Scenes/Dot.tscn" id="2"]
+[ext_resource type="Texture2D" uid="uid://ufhjhwb0knte" path="res://Assets/Emoji/Smiling Face with Sunglasses.png" id="2_u8542"]
+
+[node name="red_dot" instance=ExtResource("2")]
+color = "red"
+
+[node name="Sprite2D" parent="." index="0"]
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("2_u8542")
