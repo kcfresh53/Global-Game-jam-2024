@@ -29,6 +29,10 @@ window/size/resizable=false
 window/stretch/mode="viewport"
 window/stretch/aspect="keep_width"
 
+[editor]
+
+movie_writer/movie_file="/home/kcfresh53/Downloads/GGJ_demo_video.avi"
+
 [editor_plugins]
 
 enabled=PackedStringArray("res://addons/awesome_splash/plugin.cfg", "res://addons/godot-action/plugin.cfg", "res://addons/random_audio/plugin.cfg")
